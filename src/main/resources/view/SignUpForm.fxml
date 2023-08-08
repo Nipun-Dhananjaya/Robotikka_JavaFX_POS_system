@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="context" prefHeight="399.0" prefWidth="340.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.devstack.pos.controller.SignUpFormController">
+    <children>
+        <Label layoutX="110.0" layoutY="14.0" text="Robotikka" textFill="#7e1313">
+            <font>
+                <Font name="System Bold" size="25.0" />
+            </font>
+        </Label>
+        <Label layoutX="157.0" layoutY="288.0" text="OR">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <JFXTextField fx:id="txtEmail" labelFloat="true" layoutX="14.0" layoutY="100.0" prefHeight="36.0" prefWidth="312.0" promptText="Email">
+            <font>
+                <Font name="System Bold" size="17.0" />
+            </font>
+        </JFXTextField>
+        <JFXButton fx:id="btnRegNow" layoutX="14.0" layoutY="246.0" onAction="#btnRegNowOnAction" prefHeight="38.0" prefWidth="312.0" style="-fx-background-color: blue;" text="Register Now" textFill="#f4f2f2">
+            <font>
+                <Font name="System Bold" size="17.0" />
+            </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+        </JFXButton>
+        <JFXButton fx:id="btnAlreadyHaveAnAcc" layoutX="14.0" layoutY="311.0" onAction="#btnAlreadyHaveAnAccOnAction" prefHeight="38.0" prefWidth="312.0" style="-fx-background-color: #34495e;" text="Already have an account" textFill="#f4f2f2">
+            <font>
+                <Font name="System Bold" size="17.0" />
+            </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+        </JFXButton>
+      <JFXPasswordField fx:id="txtPwd" labelFloat="true" layoutX="14.0" layoutY="181.0" prefHeight="38.0" prefWidth="312.0" promptText="Password">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </JFXPasswordField>
+    </children>
+
+</AnchorPane>

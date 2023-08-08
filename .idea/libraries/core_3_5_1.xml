@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="core-3.5.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/main/resources/lib/qr/core-3.5.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/resources/lib/qr/jai-imageio-core-1.4.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/resources/lib/qr/javase-3.5.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/resources/lib/qr/jcommander-1.82.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/main/resources/lib/apache/commons-codec-1.15.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
