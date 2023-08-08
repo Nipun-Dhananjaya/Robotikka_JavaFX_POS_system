@@ -2,13 +2,9 @@ package com.devstack.pos.bo;
 
 import com.devstack.pos.bo.custom.impl.CustomerBoImpl;
 import com.devstack.pos.bo.custom.impl.ProductBoImpl;
+import com.devstack.pos.bo.custom.impl.ProductDetailBoImpl;
 import com.devstack.pos.bo.custom.impl.UserBoImpl;
-import com.devstack.pos.dao.DaoFactory;
-import com.devstack.pos.dao.custom.Impl.CustomerDaoImpl;
-import com.devstack.pos.dao.custom.Impl.ProductDaoImpl;
-import com.devstack.pos.dao.custom.Impl.UserDaoImpl;
 import com.devstack.pos.enums.BoTypes;
-import com.devstack.pos.enums.DaoTypes;
 
 public class BoFactory {
     private static BoFactory boFactory;
@@ -24,6 +20,8 @@ public class BoFactory {
                 return (T) new CustomerBoImpl();
             case PRODUCT:
                 return (T) new ProductBoImpl();
+            case PRODUCT_DETAIL:
+                return (T) new ProductDetailBoImpl();
             default:
                 return null;
         }

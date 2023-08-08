@@ -66,8 +66,9 @@ public class ProductMainPageController {
     }
 
     private void setData(ProductTm newValue) {
-        txtProductCode.setText(String.valueOf(newValue.getCode()));
-        txtArDsc.setText(newValue.getDescription());
+        txtBadgeProductCode.setText(String.valueOf(newValue.getCode()));
+        txtBadgeProductDsc.setText(newValue.getDescription());
+        btnNewBadge.setDisable(false);
     }
 
     private void loadAllProducts(String searchText) throws SQLException, ClassNotFoundException {
@@ -128,11 +129,19 @@ public class ProductMainPageController {
     }
 
     public void btnNewBadgeOnAction(ActionEvent actionEvent) throws IOException {
-        Stage stage=new Stage();
-        Parent load=FXMLLoader.load(getClass().getResource("/view/NewBatchForm.fxml"));
-        stage.setScene(new Scene(load));
-        stage.centerOnScreen();
-        stage.show();
+        if (!txtBadgeProductCode.getText().isEmpty()){
+            Stage stage=new Stage();
+            FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("/view/NewBatchForm.fxml"));
+            Parent load = fxmlLoader.load();
+            NewBatchFormController controller = fxmlLoader.getController();
+            controller.setDetails(Integer.parseInt(txtBadgeProductCode.getText()),
+                    txtBadgeProductDsc.getText(),stage);
+            stage.setScene(new Scene(load));
+            stage.centerOnScreen();
+            stage.show();
+        }else {
+            new Alert(Alert.AlertType.WARNING,"Please Select a Valid One!");
+        }
     }
     private void setUi(String url) throws IOException {
         Stage stage = (Stage) context.getScene().getWindow();
