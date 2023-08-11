@@ -3,6 +3,7 @@ package com.devstack.pos.dao.custom.Impl;
 import com.devstack.pos.dao.CrudUtil;
 import com.devstack.pos.dao.custom.ProductDao;
 import com.devstack.pos.entity.Product;
+import com.devstack.pos.entity.ProductDetail;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

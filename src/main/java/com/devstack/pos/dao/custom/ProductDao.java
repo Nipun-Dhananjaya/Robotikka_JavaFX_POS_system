@@ -1,8 +1,10 @@
 package com.devstack.pos.dao.custom;
 
 import com.devstack.pos.dao.CrudDao;
+import com.devstack.pos.dto.ProductDetailDto;
 import com.devstack.pos.entity.Customer;
 import com.devstack.pos.entity.Product;
+import com.devstack.pos.entity.ProductDetail;
 
 import java.sql.SQLException;
 import java.util.List;
