@@ -3,6 +3,8 @@ package com.devstack.pos.dao.custom.Impl;
 import com.devstack.pos.dao.CrudDao;
 import com.devstack.pos.dao.CrudUtil;
 import com.devstack.pos.dao.custom.ProductDetailDao;
+import com.devstack.pos.dto.ProductDetailDto;
+import com.devstack.pos.dto.ProductDetailJoinDto;
 import com.devstack.pos.entity.ProductDetail;
 
 import java.sql.ResultSet;
@@ -75,5 +77,27 @@ public class ProductDetailDaoImpl implements ProductDetailDao {
             productDetail.setBuyingPrice(resultSet.getDouble(8));
         }
         return productDetail;
+    }
+
+    @Override
+    public ProductDetailJoinDto findProductDetailJoinData(String code) throws SQLException, ClassNotFoundException {
+        ResultSet resultSet=CrudUtil.execute("SELECT * FROM product_detail pd JOIN product p ON pd.code=? AND pd.product_code=p.code",code);
+        if (resultSet.next()){
+            return new ProductDetailJoinDto(
+                    resultSet.getInt(9),
+                    resultSet.getString(10),
+                    new ProductDetailDto(
+                            resultSet.getString(1),
+                            resultSet.getString(2),
+                            resultSet.getInt(3),
+                            resultSet.getDouble(4),
+                            resultSet.getBoolean(5),
+                            resultSet.getDouble(6),
+                            resultSet.getInt(7),
+                            resultSet.getDouble(8)
+                    )
+            );
+        }
+        return null;
     }
 }

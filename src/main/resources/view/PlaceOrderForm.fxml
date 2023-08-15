@@ -13,7 +13,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane fx:id="context" prefHeight="526.0" prefWidth="1139.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.devstack.pos.controller.PlaceOrderFormController">
    <children>
       <Label layoutX="22.0" layoutY="8.0" text="Place Order Form" textFill="#7e1515">
@@ -55,22 +54,22 @@
          </cursor>
       </JFXButton>
       <Separator layoutX="14.0" layoutY="106.0" prefHeight="3.0" prefWidth="1114.0" />
-      <TextField layoutX="13.0" layoutY="122.0" prefHeight="34.0" prefWidth="231.0" promptText="Email">
+      <TextField fx:id="txtEmail" layoutX="13.0" layoutY="122.0" onAction="#searchCustomer" prefHeight="34.0" prefWidth="231.0" promptText="Email">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
-      <TextField layoutX="252.0" layoutY="122.0" prefHeight="34.0" prefWidth="231.0" promptText="Name">
+      <TextField fx:id="txtName" layoutX="252.0" layoutY="122.0" prefHeight="34.0" prefWidth="231.0" promptText="Name">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
-      <TextField layoutX="491.0" layoutY="122.0" prefHeight="34.0" prefWidth="231.0" promptText="Contact">
+      <TextField fx:id="txtContact" layoutX="491.0" layoutY="122.0" prefHeight="34.0" prefWidth="231.0" promptText="Contact">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
-      <TextField layoutX="730.0" layoutY="122.0" prefHeight="34.0" prefWidth="231.0" promptText="Salary">
+      <TextField fx:id="txtSalary" layoutX="730.0" layoutY="122.0" prefHeight="34.0" prefWidth="231.0" promptText="Salary">
          <font>
             <Font size="14.0" />
          </font>
@@ -83,8 +82,8 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <Hyperlink layoutX="14.0" layoutY="165.0" text="Show Loyalty Card Information" underline="true" />
-      <Label layoutX="155.0" layoutY="84.0" text="(Gold Member)" textFill="#131186">
+      <Hyperlink fx:id="urlNewLoyalty" layoutX="14.0" layoutY="163.0" onAction="#urlNewLoyaltyOnAction" text="Show Loyalty Card Information" underline="true" visible="false" />
+      <Label fx:id="lblLoyaltyType" layoutX="155.0" layoutY="84.0" text="(Gold Member)" textFill="#131186">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
@@ -94,7 +93,7 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="159.0" layoutY="187.0" prefHeight="34.0" prefWidth="231.0" promptText="Barcode">
+      <TextField fx:id="txtBarcode" layoutX="159.0" layoutY="187.0" onAction="#loadProductOnAction" prefHeight="34.0" prefWidth="231.0" promptText="Barcode">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -108,56 +107,56 @@
          </cursor>
       </JFXButton>
       <Separator layoutX="14.0" layoutY="230.0" prefHeight="3.0" prefWidth="1114.0" />
-      <TextField layoutX="22.0" layoutY="238.0" prefHeight="34.0" prefWidth="273.0" promptText="Description">
+      <TextField fx:id="txtDescription" layoutX="22.0" layoutY="238.0" prefHeight="34.0" prefWidth="273.0" promptText="Description">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </TextField>
-      <TextField layoutX="304.0" layoutY="238.0" prefHeight="34.0" prefWidth="139.0" promptText="Selling Price">
+      <TextField fx:id="txtSellingPrice" layoutX="304.0" layoutY="238.0" prefHeight="34.0" prefWidth="139.0" promptText="Selling Price">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </TextField>
-      <TextField layoutX="451.0" layoutY="238.0" prefHeight="34.0" prefWidth="139.0" promptText="Discount" style="-fx-border-color: brown;">
+      <TextField fx:id="txtDiscount" layoutX="451.0" layoutY="238.0" prefHeight="34.0" prefWidth="139.0" promptText="Discount" style="-fx-border-color: brown;">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </TextField>
-      <TextField layoutX="598.0" layoutY="238.0" prefHeight="34.0" prefWidth="139.0" promptText="Show Price">
+      <TextField fx:id="txtShowPrice" layoutX="598.0" layoutY="238.0" prefHeight="34.0" prefWidth="139.0" promptText="Show Price">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </TextField>
-      <TextField layoutX="746.0" layoutY="238.0" prefHeight="34.0" prefWidth="116.0" promptText="QTY On Hand">
+      <TextField fx:id="txtQtyOnHand" layoutX="746.0" layoutY="238.0" prefHeight="34.0" prefWidth="116.0" promptText="QTY On Hand">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </TextField>
-      <Label layoutX="22.0" layoutY="279.0" text="Discount Avalable" textFill="#cf4a16">
+      <Label fx:id="lblDiscountAvailable" layoutX="22.0" layoutY="279.0" text="Discount Avalable" textFill="#cf4a16" visible="false">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <TextField layoutX="869.0" layoutY="238.0" prefHeight="34.0" prefWidth="139.0" promptText="Buying Price">
+      <TextField fx:id="txtBuyingPrice" layoutX="869.0" layoutY="238.0" prefHeight="34.0" prefWidth="139.0" promptText="Buying Price">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </TextField>
-      <TextField layoutX="1014.0" layoutY="238.0" prefHeight="34.0" prefWidth="116.0" promptText="QTY " style="-fx-border-color: brown;">
+      <TextField fx:id="txtQty" layoutX="1014.0" layoutY="238.0" onAction="#addToCartOnAction" prefHeight="34.0" prefWidth="116.0" promptText="QTY " style="-fx-border-color: brown;">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </TextField>
-      <TableView layoutX="12.0" layoutY="298.0" prefHeight="178.0" prefWidth="1114.0">
+      <TableView fx:id="tblOrderDetails" layoutX="12.0" layoutY="298.0" prefHeight="178.0" prefWidth="1114.0">
         <columns>
-          <TableColumn prefWidth="171.2000093460083" text="#" />
-          <TableColumn prefWidth="245.60000610351562" text="Discription" />
-            <TableColumn prefWidth="124.00003051757812" text="Selling Price" />
-            <TableColumn prefWidth="112.00006103515625" text="Discount" />
-            <TableColumn prefWidth="114.4000244140625" text="Show Price" />
-            <TableColumn prefWidth="110.4000244140625" text="QTY" />
-            <TableColumn prefWidth="116.79998779296875" text="Total Cost" />
-            <TableColumn prefWidth="113.59991455078125" text="Operation" />
+          <TableColumn fx:id="colBarCode" prefWidth="171.2000093460083" text="#" />
+          <TableColumn fx:id="colDsc" prefWidth="245.60000610351562" text="Discription" />
+            <TableColumn fx:id="colSellingPrice" prefWidth="124.00003051757812" text="Selling Price" />
+            <TableColumn fx:id="colDiscount" prefWidth="112.00006103515625" text="Discount" />
+            <TableColumn fx:id="colShowPrice" prefWidth="114.4000244140625" text="Show Price" />
+            <TableColumn fx:id="colQty" prefWidth="110.4000244140625" text="QTY" />
+            <TableColumn fx:id="colTotalCost" prefWidth="116.79998779296875" text="Total Cost" />
+            <TableColumn fx:id="colOperation" prefWidth="113.59991455078125" text="Operation" />
         </columns>
       </TableView>
       <JFXButton fx:id="btnCompleteOrder" layoutX="971.0" layoutY="482.0" onAction="#btnCompleteOrderOnAction" prefHeight="34.0" prefWidth="156.0" style="-fx-background-color: #2980b9;" text="Complete Order" textFill="#f7f5f5">
@@ -173,7 +172,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="92.0" layoutY="489.0" text="0.00/=" textFill="#cf4a16">
+      <Label fx:id="lblTotal" layoutX="92.0" layoutY="489.0" text="0.00/=" textFill="#cf4a16">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
